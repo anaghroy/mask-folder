@@ -1,6 +1,6 @@
 @font-face {
   font-family: font;
-  src: url(./nofran.regular.ttf);
+  src: url(./boldwinn.regular.ttf);
 }
 * {
   margin: 0;
@@ -17,10 +17,15 @@ body {
 
 body {
   width: 100%;
+  height: 100%;
+}
+body main {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   background: linear-gradient(to top, #482357, #1d1d3f, #22273b);
 }
-body .container {
+body main .container {
   position: relative;
   display: flex;
   align-items: center;
@@ -31,19 +36,19 @@ body .container {
   background: linear-gradient(to top, #bc430d, #241705);
   transform: translate(50%, 15%);
 }
-body .container .cube {
+body main .container .cube {
   position: absolute;
   width: 45%;
   left: 70%;
   top: 30%;
   animation: float 10s ease-in-out infinite;
 }
-body .container .cube img {
+body main .container .cube img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-body .container .folder {
+body main .container .folder {
   position: absolute;
   width: 80vh;
   height: 80vh;
@@ -52,35 +57,35 @@ body .container .folder {
           mask: url(./folder.png) center/cover no-repeat;
   z-index: -1;
 }
-body .container .folder .decoration {
+body main .container .folder .decoration {
   position: absolute;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
-body .container .folder .decoration-1 {
+body main .container .folder .decoration-1 {
   width: 100px;
   height: 100px;
   top: 10%;
   left: 5%;
   animation: float 4s ease-in-out infinite;
 }
-body .container .folder .decoration-2 {
+body main .container .folder .decoration-2 {
   width: 60px;
   height: 60px;
   bottom: 15%;
   right: 15%;
   animation: float 5s ease-in-out infinite 1s;
 }
-body .container .folder .decoration-3 {
+body main .container .folder .decoration-3 {
   width: 80px;
   height: 80px;
   top: 50%;
   left: 15%;
   animation: float 6s ease-in-out infinite 2s;
 }
-body .container .folder .button {
+body main .container .folder .button {
   position: relative;
   display: flex;
   align-items: center;
@@ -90,7 +95,7 @@ body .container .folder .button {
   width: -moz-fit-content;
   width: fit-content;
 }
-body .container .folder .content {
+body main .container .folder .content {
   position: relative;
   width: -moz-fit-content;
   width: fit-content;
@@ -99,13 +104,13 @@ body .container .folder .content {
   top: 15%;
   font-size: 2rem;
 }
-body .container .folder .content h2 {
+body main .container .folder .content h2 {
   color: #feeaf0;
   font-family: font;
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: 1px;
 }
-body .container .folder .text {
+body main .container .folder .text {
   position: relative;
   font-size: 1.2rem;
   top: 15%;
@@ -114,7 +119,7 @@ body .container .folder .text {
   width: fit-content;
   padding: 20px;
 }
-body .container .folder button {
+body main .container .folder button {
   position: relative;
   font-size: 1.1rem;
   top: 15%;
@@ -125,13 +130,12 @@ body .container .folder button {
   border: 0.1rem solid #feeaf0;
   color: #feeaf0;
 }
-body .container .folder button:hover {
+body main .container .folder button:hover {
   color: #ddd;
   background-color: #241705;
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   border: none;
 }
-
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
