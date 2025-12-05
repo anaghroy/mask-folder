@@ -1,11 +1,56 @@
+:root {
+  /* COLORS */
+  --color-white: #fff;
+  --color-light: #feeaf0;
+  --color-light-alt: #ddd;
+
+  --color-bg-main-1: #482357;
+  --color-bg-main-2: #1d1d3f;
+  --color-bg-main-3: #22273b;
+
+  --color-folder-1: #f09410;
+  --color-folder-2: #bc430d;
+
+  --color-container-gradient-1: #bc430d;
+  --color-container-gradient-2: #241705;
+
+  --color-border-light: #feeaf0;
+
+  /* FONTS */
+  --font-heading: font;
+  --font-text: text-font;
+
+  /* FONT SIZES */
+  --fs-nav-icon: 4rem;
+  --fs-heading: 2rem;
+  --fs-text: 1.2rem;
+  --fs-btn: 1.1rem;
+
+  /* SPACING */
+  --btn-padding: 5px 9px;
+  --content-padding: 20px;
+
+  /* ANIMATIONS */
+  --float-distance: -20px;
+
+  /* BORDER RADIUS */
+  --radius-main: 20px;
+  --radius-btn: 10px;
+
+  /* BACKDROP */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+}
+
 @font-face {
   font-family: font;
   src: url(./boldwinn.regular.ttf);
 }
+
 @font-face {
   font-family: text-font;
   src: url(./texgyreheros.gyreheros-regular.otf);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -19,27 +64,30 @@ body {
   height: 100%;
   width: 100%;
 }
+
 body {
-  width: 100%;
-  height: 100%;
-  // background-color: red;
   main {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: linear-gradient(to top, #482357, #1d1d3f, #22273b);
-    // overflow: hidden;
-    .nav{
-      // background-color: red;
-      color: #fff;
+    background: linear-gradient(
+      to top,
+      var(--color-bg-main-1),
+      var(--color-bg-main-2),
+      var(--color-bg-main-3)
+    );
+
+    .nav {
+      color: var(--color-white);
       display: flex;
       align-items: center;
       justify-content: space-evenly;
       width: 100%;
-      padding: 5px 0px;
+      padding: 5px 0;
       position: absolute;
-      i{
-        font-size: 4rem;
+
+      i {
+        font-size: var(--fs-nav-icon);
       }
     }
 
@@ -50,39 +98,46 @@ body {
       justify-content: center;
       height: 80%;
       width: 50%;
-      border-radius: 20px;
-      background: linear-gradient(to top, #bc430d, #241705);
+      border-radius: var(--radius-main);
+      background: linear-gradient(
+        to top,
+        var(--color-container-gradient-1),
+        var(--color-container-gradient-2)
+      );
       transform: translate(50%, 15%);
-      // z-index: 9;
 
       .cube {
-        // background-color: #bc430d;
         position: absolute;
         width: 45%;
         left: 70%;
         top: 30%;
         animation: float 10s ease-in-out infinite;
-        // z-index: -1;
+
         img {
           width: 100%;
           object-fit: cover;
-          // filter: blur(1px);
         }
       }
+
       .folder {
         position: absolute;
         width: 80vh;
         height: 80vh;
-        background: linear-gradient(to bottom, #f09410, #bc430d);
-        // filter: blur(5px);
+        background: linear-gradient(
+          to bottom,
+          var(--color-folder-1),
+          var(--color-folder-2)
+        );
         mask: url(./folder.png) center / cover no-repeat;
         z-index: -1;
+
         .decoration {
           position: absolute;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.1);
+          background: var(--glass-bg);
           backdrop-filter: blur(10px);
         }
+
         .decoration-1 {
           width: 100px;
           height: 100px;
@@ -90,6 +145,7 @@ body {
           left: 5%;
           animation: float 4s ease-in-out infinite;
         }
+
         .decoration-2 {
           width: 60px;
           height: 60px;
@@ -105,76 +161,74 @@ body {
           left: 15%;
           animation: float 6s ease-in-out infinite 2s;
         }
+
         .button {
           position: relative;
           display: flex;
           align-items: center;
           justify-content: end;
-          // background-color: #bc430d;
           top: 13%;
           left: 60%;
           width: fit-content;
         }
+
         .content {
-          // background-color: #241705;
           position: relative;
           width: fit-content;
-          padding: 20px; // Add some spacing from edges
+          padding: var(--content-padding);
           z-index: 1;
           top: 15%;
-          font-size: 2rem;
+          font-size: var(--fs-heading);
+
           h2 {
-            color: #feeaf0;
-            font-family: font;
+            color: var(--color-light);
+            font-family: var(--font-heading);
             font-weight: 300;
             letter-spacing: 1px;
           }
         }
+
         .text {
           position: relative;
-          font-size: 1.2rem;
-          // background-color: red;
+          font-size: var(--fs-text);
           top: 15%;
-          color: #feeaf0;
+          color: var(--color-light);
           width: fit-content;
-          // background-color: #241705;
-          padding: 20px;
-          p{
-            font-family: text-font;
-           
+          padding: var(--content-padding);
 
+          p {
+            font-family: var(--font-text);
           }
-          
-
         }
 
         button {
           position: relative;
-          font-size: 1.1rem;
-          // background-color: red;
+          font-size: var(--fs-btn);
           top: 15%;
-          padding: 5px 9px;
+          padding: var(--btn-padding);
           margin: 20px;
-          border-radius: 10px;
+          border-radius: var(--radius-btn);
           background-color: transparent;
-          border: 0.1rem solid #feeaf0;
-          color: #feeaf0;
+          border: 0.1rem solid var(--color-border-light);
+          color: var(--color-light);
         }
+
         button:hover {
-          color: #ddd;
-          background-color: #241705;
+          color: var(--color-light-alt);
+          background-color: var(--color-container-gradient-2);
           transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
           border: none;
         }
       }
     }
+
     @keyframes float {
       0%,
       100% {
         transform: translateY(0px);
       }
       50% {
-        transform: translateY(-20px);
+        transform: translateY(var(--float-distance));
       }
     }
   }
