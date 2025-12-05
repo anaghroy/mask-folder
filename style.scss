@@ -31,12 +31,14 @@ body {
     background: linear-gradient(to top, #bc430d, #241705);
     transform: translate(50%, 15%);
     // z-index: 9;
+
     .cube {
       // background-color: #bc430d;
       position: absolute;
       width: 45%;
       left: 70%;
       top: 30%;
+      animation: float 10s ease-in-out infinite;
       // z-index: -1;
       img {
         width: 100%;
@@ -51,6 +53,34 @@ body {
       // filter: blur(5px);
       mask: url(./folder.png) center / cover no-repeat;
       z-index: -1;
+      .decoration {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+      }
+      .decoration-1 {
+        width: 100px;
+        height: 100px;
+        top: 10%;
+        left: 5%;
+        animation: float 4s ease-in-out infinite;
+      }
+      .decoration-2 {
+        width: 60px;
+        height: 60px;
+        bottom: 15%;
+        right: 15%;
+        animation: float 5s ease-in-out infinite 1s;
+      }
+
+      .decoration-3 {
+        width: 80px;
+        height: 80px;
+        top: 50%;
+        left: 15%;
+        animation: float 6s ease-in-out infinite 2s;
+      }
       .button {
         position: relative;
         display: flex;
@@ -106,5 +136,14 @@ body {
         border: none;
       }
     }
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }
