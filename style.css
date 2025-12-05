@@ -1,3 +1,7 @@
+@font-face {
+  font-family: font;
+  src: url(./nofran.regular.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +16,7 @@ body {
 }
 
 .container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,11 +26,67 @@ body {
   background: linear-gradient(to top, #bc430d, #241705);
   transform: translate(50%, 15%);
 }
+.container .cube {
+  position: absolute;
+  width: 45%;
+  left: 70%;
+  top: 30%;
+}
+.container .cube img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .container .folder {
+  position: absolute;
   width: 80vh;
   height: 80vh;
   background: linear-gradient(to bottom, #f09410, #bc430d);
-  filter: blur(5px);
   -webkit-mask: url(./folder.png) center/cover no-repeat;
           mask: url(./folder.png) center/cover no-repeat;
+  z-index: -1;
+}
+.container .folder .button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  top: 13%;
+  left: 60%;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.container .folder .content {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px;
+  z-index: 1;
+  top: 15%;
+  font-size: 2rem;
+}
+.container .folder .content h2 {
+  color: #feeaf0;
+  font-family: font;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.container .folder .text {
+  position: relative;
+  font-size: 1.2rem;
+  top: 15%;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px;
+}
+.container .folder button {
+  position: relative;
+  font-size: 1.2rem;
+  top: 15%;
+  padding: 5px 9px;
+  margin: 20px;
+  border-radius: 20px;
+  background-color: transparent;
+  border: 0.1rem solid #feeaf0;
+  color: #feeaf0;
 }/*# sourceMappingURL=style.css.map */
