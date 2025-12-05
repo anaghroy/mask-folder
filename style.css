@@ -2,6 +2,10 @@
   font-family: font;
   src: url(./boldwinn.regular.ttf);
 }
+@font-face {
+  font-family: text-font;
+  src: url(./texgyreheros.gyreheros-regular.otf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +28,18 @@ body main {
   height: 100%;
   overflow: hidden;
   background: linear-gradient(to top, #482357, #1d1d3f, #22273b);
+}
+body main .nav {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 5px 0px;
+  position: absolute;
+}
+body main .nav i {
+  font-size: 4rem;
 }
 body main .container {
   position: relative;
@@ -118,6 +134,9 @@ body main .container .folder .text {
   width: -moz-fit-content;
   width: fit-content;
   padding: 20px;
+}
+body main .container .folder .text p {
+  font-family: text-font;
 }
 body main .container .folder button {
   position: relative;
